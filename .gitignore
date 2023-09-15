@@ -1,0 +1,6 @@
+*.db
+InventorySafe/ladyj.db
+InventorySafe/bin/*
+InventorySafe/obj/*
+InventorySafe.Core/bin/*
+InventorySafe.Core/obj/*
