@@ -7,3 +7,8 @@ V1
 1:1,InventorySafe.Core,g_.f_.h_,U_,v_
 2:lazy,J
 2:GetProducts,x
+2:ProductGridPage,l
+2:s1450811927,JK
+2:t1450811927,D
+1:2,InventorySafe,,JK_,D_
+2:OpenContentGridPage,k

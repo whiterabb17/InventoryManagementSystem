@@ -44,6 +44,14 @@
                 RowEditEnding="productGridList_RowEditEnding"
                 SelectedCellsChanged="productGridList_SelectedCellsChanged"
                 SelectionChanged="productGridList_SelectionChanged">
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Click="StockDialog" Header="Add Stock" />
+                        <MenuItem Click="ShowTODODialog" Header="Change Value" />
+                        <Separator />
+                        <MenuItem Click="DeleteItem" Header="Delete Item" />
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
                 <DataGrid.Columns>
                     <!--
                         TODO:

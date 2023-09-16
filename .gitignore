@@ -4,3 +4,7 @@ InventorySafe/bin/*
 InventorySafe/obj/*
 InventorySafe.Core/bin/*
 InventorySafe.Core/obj/*
+.vs/InventorySafe/v17/.suo
+*.vsidx
+*.v2
+*.bin

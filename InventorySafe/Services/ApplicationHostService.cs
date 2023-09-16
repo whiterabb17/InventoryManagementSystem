@@ -22,12 +22,16 @@ public class ApplicationHostService : IHostedService
         _navigationService = navigationService;
     }
 
+    public ApplicationHostService()
+    {
+    }
+
     public async Task StartAsync(CancellationToken cancellationToken)
     {
         // Initialize services that you need before app activation
         await InitializeAsync();
 
-        await HandleActivationAsync();
+        await HandleActivationAsync(typeof(ProductGridPage));
 
         // Tasks after activation
         await StartupAsync();
@@ -55,7 +59,7 @@ public class ApplicationHostService : IHostedService
         }
     }
 
-    private async Task HandleActivationAsync()
+    internal async Task HandleActivationAsync(Type page)
     {
         var activationHandler = _activationHandlers.FirstOrDefault(h => h.CanHandle());
 
@@ -72,7 +76,7 @@ public class ApplicationHostService : IHostedService
             _shellWindow = _serviceProvider.GetService(typeof(IShellWindow)) as IShellWindow;
             _navigationService.Initialize(_shellWindow.GetNavigationFrame());
             _shellWindow.ShowWindow();
-            _navigationService.NavigateTo(typeof(ProductGridPage));
+            _navigationService.NavigateTo(page);
             await Task.CompletedTask;
         }
     }
